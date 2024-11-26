@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.lunaelf</groupId>
-    <artifactId>java-ci</artifactId>
+    <artifactId>java-ci-cd</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>java-ci</name>
     <description>java-ci</description>

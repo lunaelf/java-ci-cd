@@ -1,4 +1,4 @@
-package com.lunaelf.javaci;
+package com.lunaelf.java_ci_cd;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class JavaCiApplication {
+public class JavaCiCdApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JavaCiApplication.class, args);
+        SpringApplication.run(JavaCiCdApplication.class, args);
     }
 
     @GetMapping("/hello")
