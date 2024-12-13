@@ -1,0 +1,5 @@
+services:
+  server:
+    image: crpi-9t66pyx5tr44wo4w.cn-shanghai.personal.cr.aliyuncs.com/lunaelf/java-ci-cd:latest
+    ports:
+      - 8080:8080
