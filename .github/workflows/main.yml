@@ -41,6 +41,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.KEY }}
-          source: "./deploy/compose.yaml"
+          source: "${{ github.workspace }}/deploy/compose.yaml"
           target: /home/${{ secrets.USERNAME }}/
           debug: true
