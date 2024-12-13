@@ -35,7 +35,6 @@ jobs:
 #    needs: build
     steps:
       - uses: actions/checkout@v4
-      - run: ls ${{ github.workspace }}
       - name: Copy compose.yaml to server
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -45,3 +44,14 @@ jobs:
           key: ${{ secrets.KEY }}
           source: "deploy/compose.yaml"
           target: /home/${{ secrets.USERNAME }}/
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.KEY }}
+          script: |
+            cd /home/${{ secrets.USERNAME }}/deploy
+            docker compose pull
+            docker compose up -d
