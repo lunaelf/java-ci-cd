@@ -35,7 +35,7 @@ jobs:
 #    needs: build
     steps:
       - name: List repository contents
-        run: ls ${{ github.workspace }}
+        run: ls ${{ github.workspace }}/deploy
       - name: Copy compose.yaml to server
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -43,5 +43,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.KEY }}
-          source: "${{ github.workspace }}/deploy/compose.yaml"
+          source: "deploy/compose.yaml"
           target: /home/${{ secrets.USERNAME }}/
