@@ -53,5 +53,6 @@ jobs:
           key: ${{ secrets.KEY }}
           script: |
             cd /home/${{ secrets.USERNAME }}/deploy
+            docker login --username=lunaelf crpi-9t66pyx5tr44wo4w.cn-shanghai.personal.cr.aliyuncs.com
             docker compose pull
             docker compose up -d
