@@ -42,9 +42,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.KEY }}
-          source: "${{ github.workspace }}/deploy/compose.yaml"
+          source: "deploy/compose.yaml"
           target: /home/${{ secrets.USERNAME }}/
-
 #      - name: Deploy to server
 #        uses: appleboy/ssh-action@v1.2.0
 #        with:
