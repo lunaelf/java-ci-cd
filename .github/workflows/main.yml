@@ -34,8 +34,6 @@ jobs:
     runs-on: ubuntu-latest
 #    needs: build
     steps:
-      - name: List repository contents
-        run: ls ${{ github.workspace }}/deploy
       - name: Copy compose.yaml to server
         uses: appleboy/scp-action@v0.1.7
         with:
