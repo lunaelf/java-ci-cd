@@ -42,18 +42,18 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.KEY }}
-          source: "deploy/compose.yaml"
+          source: "${{ github.workspace }}/deploy/compose.yaml"
           target: /home/${{ secrets.USERNAME }}/
-      - name: Deploy to server
-        uses: appleboy/ssh-action@v0.1.10
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          port: ${{ secrets.PORT }}
-          key: ${{ secrets.KEY }}
-          script: |
-            cd /home/${{ secrets.USERNAME }}/deploy
-            echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login --username lunaelf --password-stdin crpi-9t66pyx5tr44wo4w.cn-shanghai.personal.cr.aliyuncs.com
-            docker compose pull
-            docker compose up -d
-            rm -rf /home/${{ secrets.USERNAME }}/deploy
+#      - name: Deploy to server
+#        uses: appleboy/ssh-action@v1.2.0
+#        with:
+#          host: ${{ secrets.HOST }}
+#          username: ${{ secrets.USERNAME }}
+#          port: ${{ secrets.PORT }}
+#          key: ${{ secrets.KEY }}
+#          script: |
+#            cd /home/${{ secrets.USERNAME }}/deploy
+#            echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login --username lunaelf --password-stdin crpi-9t66pyx5tr44wo4w.cn-shanghai.personal.cr.aliyuncs.com
+#            docker compose pull
+#            docker compose up -d
+#            rm -rf /home/${{ secrets.USERNAME }}/deploy
