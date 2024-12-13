@@ -42,5 +42,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.KEY }}
-          source: "compose.yaml"
+          source: "deploy/compose.yaml"
           target: /home/${{ secrets.USERNAME }}/
